@@ -1,0 +1,1557 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+@keyframes MudarCorBoxShawdow {
+    0% {
+        box-shadow: 0 4px 10px rgba(26, 182, 187, 0.9);
+    }
+
+    50% {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+        color: #38BBE9;
+        background-color: none;
+
+    }
+
+    100% {
+        box-shadow: 0 4px 10px rgba(26, 182, 187, 0.9);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 101, 0.185);
+        border-radius: 50%;
+
+    }
+
+    70% {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+
+    }
+}
+
+.divisor {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #38BBE9, transparent);
+}
+
+
+.botao-wpp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+
+}
+
+::marker {
+    color: #38BBE9;
+    font-size: 18px;
+}
+
+
+#paragrafo-principal {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.9s ease;
+}
+
+#paragrafo-principal.aparecer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#Endereço {
+    scroll-margin-top: 245px;
+}
+
+#Serviços {
+    scroll-margin-top: 255px;
+
+}
+
+#quemsomos {
+    scroll-margin-top: 120px;
+}
+
+#Início {
+    scroll-margin-top: 120px;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+p {
+    font-weight: 400;
+}
+
+/* CONTAINER PADRÃO */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.fundo-topo {
+    background-color: #c9010100;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+.fundo-meio {
+    background-image: url(./imagens/BACK1.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    /* espaço do header */
+
+}
+
+
+
+
+.container-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: #F7F9FB;
+
+}
+
+.div-section-title-main {
+    padding: 20px auto;
+
+}
+
+
+
+
+
+header {
+    border-bottom: 1px solid #ffffff;
+    width: 100vw;
+
+    /* previne overflow horizontal */
+    position: fixed;
+    /* fixa no topo da tela */
+    top: 0;
+    /* gruda no topo */
+    left: 0;
+    /* alinha à esquerda */
+    width: 100%;
+    /* ocupa a largura inteira */
+    z-index: 9999;
+    /* fica acima de todo o resto */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* fundo (se for transparente pode sumir com scroll) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+    /* sombra opcional bonita */
+
+}
+
+header img {
+    height: 100px;
+}
+
+main {
+    background-color: #F7F9FB;
+
+}
+
+
+.container-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 17px;
+    color: #fff;
+
+}
+
+.nav {}
+
+.nav ul {
+    display: flex;
+    gap: 30px;
+
+}
+
+.nav li {
+    list-style: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 10px;
+    transition: all ease-in-out 0.2s;
+
+}
+
+.nav li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    position: relative;
+
+}
+
+.nav li a:hover {
+    color: #38BBE9;
+}
+
+.nav li a:hover::after {
+    transform: scaleX(1);
+    /* aparece */
+}
+
+.nav li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #38BBE9;
+    transition: all ease-in-out 0.2s;
+
+    transform: scaleX(0);
+    /* escondida */
+    transform-origin: left;
+    /* começa da esquerda */
+    transition: transform 0.3s ease;
+}
+
+.nav li:hover {
+    transform: scale(1.1);
+}
+
+
+
+.hamburger {
+    display: none;
+    /* Esconde o ícone no computador */
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+.container-main {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    color: #fff;
+    width: 100%;
+    padding: 0;
+
+
+}
+
+.container-main h1 {
+    margin-bottom: 40PX;
+    padding: 20px;
+    text-align: center;
+    max-width: 900px;
+    color: #000;
+    font-style: italic;
+}
+
+
+
+
+
+.container-marcas {
+    padding: 6rem 4rem;
+    background-color: #F5F8FB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.marcas {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 10px;
+    /* controla espaço horizontal e vertical */
+    padding: 30px;
+    /* espaço interno do container */
+    border-radius: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80rem;
+    overflow-x: auto;
+
+}
+
+.marcas>div {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+
+    font-weight: bold;
+    color: #4C545F;
+}
+
+
+.container-marcas h2 {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    color: #000000;
+    font-size: 30px;
+}
+
+.container-marcas p {
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0px;
+    color: #6588BA;
+    font-size: 18px;
+}
+
+.marcas-span {
+    background: linear-gradient(145deg, #0956C5, #0D9DE4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+}
+
+
+.conteudo-flex {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-direction: column;
+    max-width: 500px;
+    margin-right: 20px;
+}
+
+
+
+.conteudo-flex ul li {
+    text-align: start;
+}
+
+.div-section-menus {
+    gap: 20px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    max-width: 1140px;
+    flex-direction: column;
+
+
+}
+
+.div-section-menu {
+    color: #000;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    margin: 20px;
+    background-color: #FFFFFF;
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(26, 182, 187, 0.9);
+}
+
+.div-section-menu.reverse {
+    flex-direction: row-reverse;
+}
+
+
+
+.div-section-menu p {
+    line-height: 1.6;
+    padding-right: 20px;
+
+
+}
+
+
+.imagem-lateral-right {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+}
+
+.imagem-lateral-right img {
+    width: 100%;
+    max-width: 500px;
+    /* controla o tamanho no desktop */
+    height: auto;
+    /* mantém proporção */
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.div-section-menu h2 {
+    font-size: 22px;
+    color: #0f2ebb;
+    padding-bottom: 10px;
+    margin: 0px 0px 10px;
+}
+
+.section-title-text p {
+    color: #000000;
+
+}
+
+.div-section-menu h3 {
+    font-size: 20px;
+    color: #222222ea;
+    padding-bottom: 10px;
+    margin: 0px 0px 10px;
+}
+
+
+.div-section-menu p {
+    font-size: 18px;
+    color: #003154;
+    padding-bottom: 10px;
+    margin: 0px 0px 10px;
+}
+
+
+
+
+.lista ul {
+    padding-left: 10px;
+
+}
+
+.section-menu-automotivo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 30px;
+    margin-top: 80px;
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.section-menu-automotivo p {
+    font-size: 26px;
+    color: #ffffff;
+    font-style: italic;
+    line-height: 1.6;
+
+    background-color: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 4px 10px rgba(26, 182, 187, 0.9);
+    border-radius: 8px;
+
+    padding: 30px;
+    margin: 0;
+    animation: MudarCorBoxShawdow 5s infinite alternate;
+}
+
+.section-menu-automotivo h2 {
+    color: #fff;
+    padding: 10px;
+}
+
+.rodapé {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+
+.direitos-rodapé {
+    padding: 20px;
+    background-color: #1F2937;
+
+    p {
+        padding: 10px;
+    }
+}
+
+.section-tempo-experiencia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #094BB5;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+
+    padding: 6rem 4rem;
+    margin: 0;
+    border-radius: 0;
+}
+
+.section-tempo-experiencia p {
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 0 30px;
+
+    border-radius: 10px;
+}
+
+.quem-somos {
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+}
+
+.tempo {
+    text-align: center;
+    color: #C9D7EE;
+    padding: 10px 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+
+}
+
+/*grid para as qualidades*/
+.menu-qualidades {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 colunas */
+    gap: 30px;
+    margin-top: 40px;
+
+}
+
+.qualidades {
+    background-color: #215AB5;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    text-align: left;
+}
+
+.qualidades:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s ease-in-out;
+}
+
+.qualidades h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding: auto;
+    text-align: center;
+}
+
+.qualidades p {
+    color: #C3D2EA;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #215AB5;
+}
+
+.quem-somos2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-content: center;
+    color: #000000;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 80px;
+    padding: 6rem 4rem;
+    background-color: #F8FAFC;
+}
+
+.span-quem-somos {
+    background-color: #E0E9F5;
+    color: #0950C3;
+    font-size: 14px;
+    padding: 10px 8px;
+    border-radius: 15px;
+
+
+}
+
+.texto-quem-somos {
+    font-size: 18px;
+    text-align: justify;
+    color: #65758B;
+    padding: 20px;
+}
+
+.quem-somos-div-textos h2 {
+    font-size: 36px;
+    padding: 20px;
+    text-align: inherit;
+
+
+}
+
+.quem-somos-div-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.anos-experiencia {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+
+}
+
+.anos-experiencia img {
+    padding: 5px;
+    margin-top: 10px;
+    background-color: #E6EDF8;
+    border-radius: 50%;
+
+}
+
+.anos-experiencia p {
+
+    font-size: 18px;
+    font-size: 14px;
+    padding: 10px;
+    color: #65758B;
+}
+
+.anos-experiencia h3 {
+    font-size: 36px;
+    color: #0956C5;
+    padding: 10px;
+}
+
+/*grid para as qualidades acima*/
+
+
+
+.direitos-rodapé p {
+    color: #565F69;
+    font-style: italic;
+    font-size: 14px;
+
+}
+
+.endereço-rodapé-info-mapa {
+    display: flex;
+
+
+}
+
+
+
+.info-contatos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 32px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.info-contatos h3 {
+    font-size: 20px;
+}
+
+.info-contatos p {
+    padding: 10px;
+}
+
+.item1-contato-rodape {
+    background-color: #F7F9FB;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+
+    display: flex;
+
+}
+
+.item1-contato-rodape img {
+    width: auto;
+    height: 40px;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #DFE8F4;
+    border-radius: 50%;
+
+}
+
+.item1-contato-rodape p:not(.nome-central) {
+    color: #65758B;
+}
+
+
+.container-contato-rodape {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.endereço-rodapé {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 96px 64px;
+    background-color: #F8FAFC;
+    padding-bottom: 80px;
+
+}
+
+.endereço-rodapé h2 {
+    font-size: 32px;
+    margin: 0px 0px 16px;
+}
+
+.endereço-rodapé p {
+    padding-bottom: 20px;
+}
+
+.nome-central {
+
+
+    color: #000000;
+}
+
+
+.mapbox {
+    position: relative;
+    width: 800px;
+    height: 600px;
+
+}
+
+.mapbox iframe {
+    border: 0;
+    border-radius: 10px;
+}
+
+.mapbox h2 {
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 36px;
+}
+
+.mapbox p {
+    margin-bottom: 20px;
+    color: #6e6e6e;
+    font-size: 18px;
+}
+
+.mapbox iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.redes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/*rodape/footer*/
+
+.rodape {
+    background-color: #1F2937;
+    color: #A6A6A6;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 60px 20px;
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-brand img {
+    height: 70px;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.footer-links,
+.footer-contact {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li,
+.footer-contact li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #A6A6A6;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #38BBE9;
+}
+
+/* BARRA FINAL */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+
+
+}
+
+.footer-bottom a {
+    color: #686868c5;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+
+}
+
+.footer-bottom a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #20a6ff;
+    opacity: 0.8;
+
+
+
+    transform: scaleX(0);
+    /*escondida*/
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.footer-bottom a:hover::after {
+    transform: scaleX(1);
+}
+
+
+
+
+
+
+/* entre parent é do slide */
+.slider {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    width: 400%;
+    height: auto;
+    display: flex;
+    transition: margin-left 1s ease-in-out;
+    overflow: hidden;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 25%;
+    transition: 1s ease-in-out;
+    flex-shrink: 0;
+
+}
+
+.slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    /* mantém proporção e corta o excesso */
+    object-position: center;
+    /* centraliza a imagem */
+    display: block;
+}
+
+.manual-navigation {
+    width: 100%;
+    max-width: 800px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.manual-btn {
+    border: 2px solid #ffffffc4;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
+    background-color: #ffffff;
+}
+
+#radio1:checked~.first {
+    margin-left: 0;
+}
+
+#radio2:checked~.first {
+    margin-left: -25%;
+}
+
+#radio3:checked~.first {
+    margin-left: -50%;
+}
+
+#radio4:checked~.first {
+    margin-left: -75%;
+}
+
+.navigation-auto div {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+    width: auto;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: #20a6ff;
+}
+
+.navigation-auto {
+    width: 100%;
+    max-width: 800px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+
+#radio1:checked~.navigation-auto .auto-btn1 {
+    background-color: #ffffff;
+}
+
+#radio2:checked~.navigation-auto .auto-btn2 {
+    background-color: #ffffff;
+}
+
+#radio3:checked~.navigation-auto .auto-btn3 {
+    background-color: #ffffff;
+}
+
+#radio4:checked~.navigation-auto .auto-btn4 {
+    background-color: #ffffff;
+}
+
+
+
+/*Tudo entre parent é do slide */
+
+
+
+
+
+
+
+
+@media (max-width:768px) {
+    .endereço-rodapé-info-mapa {}
+
+    .quem-somos-div-icons {
+        flex-direction: column;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-brand img {
+        margin: 0 auto 15px;
+    }
+
+    #Serviços {
+        scroll-margin-top: 300px;
+
+    }
+
+    .div-section-menu {
+        flex-direction: column;
+        text-align: center;
+
+
+    }
+
+    .div-section-menu.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .div-section-menu h3 {
+        text-align: center;
+        width: 100%;
+    }
+
+    .section-menu-automotivo p {
+        font-size: 20px;
+        margin-top: 220px;
+
+
+    }
+
+    .conteudo-flex {
+        align-items: center;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .conteudo-flex li {
+        padding: 6px 0;
+        text-align: center;
+    }
+
+
+
+    .conteudo-flex h2 {
+        text-align: center;
+        width: 100%;
+    }
+
+
+    .fundo-meio {
+        height: 90vh;
+        background-position: 40% 50%;
+
+    }
+
+
+
+    .div-section-menus {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-menu-automotivo p {
+        font-size: 22px;
+        margin-top: 150px;
+    }
+
+    .fundo-topo {
+        margin: 20px;
+
+    }
+
+    .mapbox {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .slide img {
+        height: 300px;
+    }
+
+    .manual-navigation {
+        margin-top: -35px;
+    }
+
+    .navigation-auto {
+        margin-top: 260px;
+    }
+
+    /* menu hamburger*/
+    .hamburger {
+        display: block;
+        font-size: 40px;
+        transition: all ease-in-out 0.2s;
+        /* Mostra o ícone no celular */
+    }
+
+
+    .nav ul {
+        position: absolute;
+        top: 100%;
+        /* desce o menu para fora do header */
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 10px;
+        gap: 20px;
+        z-index: 9999;
+        /* para ficar por cima */
+    }
+
+    .nav ul.show {
+        display: flex;
+    }
+
+
+    .lista ul {
+        font-size: 14px;
+    }
+
+    .nav li {
+        font-size: 18.4px;
+    }
+
+    .nav ul.show {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    /* menu hamburger*/
+
+
+}
+
+
+
+
+
+
+
+
+
+@media (max-width:480px) {
+
+
+
+
+    header {
+
+        border-bottom: none;
+    }
+
+    header img {
+        height: 80px;
+    }
+
+    #Endereço {
+        scroll-margin-top: 380px;
+    }
+
+    #Serviços {
+        scroll-margin-top: 350px;
+
+    }
+
+    #Início {
+        scroll-margin-top: 120px;
+    }
+
+    #quemsomos {
+        scroll-margin-top: 200px;
+
+    }
+
+    .container-principal {
+        flex-direction: column;
+    }
+
+    .container-main h1 {
+        margin: 20px;
+    }
+
+    .container-header {}
+
+
+
+    .endereço-rodapé {
+        padding: 0;
+    }
+
+    .endereço-rodapé-info-mapa {
+
+        padding: 10px;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .info-contatos {
+        gap: 5px;
+        margin-left: 0;
+    }
+
+    .nav ul {
+        position: absolute;
+        text-align: center;
+        justify-content: center;
+        /*fixa o menu
+        em uma posiçao exata*/
+        right: 0;
+        /* encostado na direita*/
+        flex-direction: column;
+
+
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        /*arredonda
+        o canto inferior esquerdo*/
+        box-shadow: -2px 4px 10px rgba(0, 0, 0, 0.7);
+        display: none;
+        gap: 5px;
+
+
+    }
+
+    .lista ul {
+        font-size: 14px;
+    }
+
+    .nav li {
+        font-size: 18.4px;
+    }
+
+    .nav ul.show {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    /* menu hamburger*/
+
+    .fundo-meio {
+        background-image: url(./imagens/ar1.jpg);
+        background-position: center;
+        height: 80vh;
+        background-position: 40% 50%;
+    }
+
+    .fundo-meio::after {}
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .container-main {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container-main h1 {
+        font-size: 25px;
+        box-shadow: none;
+        padding-bottom: 30px;
+    }
+
+    .container-marcas h2 {
+        font-size: 24px;
+
+    }
+
+    .container-marcas p {
+        font-size: 14px;
+        margin: 0px 0px 20px 0px;
+    }
+
+
+    .conteudo-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        max-width: 500px;
+    }
+
+    .conteudo-flex p {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .imagem-lateral-right img {
+        margin-top: -40px;
+    }
+
+    .section-menu-automotivo p {
+        font-size: 18px;
+        padding: 20px;
+        margin-bottom: 350px;
+
+    }
+
+    .botao-wpp {
+        margin-right: 40px;
+    }
+
+
+
+    .div-section-menu {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .div-section-menus {
+        flex-direction: column;
+    }
+
+    .div-section-menu h3 {
+
+        font-size: 17px;
+    }
+
+    .section-tempo-experiencia {
+        padding: 10px;
+    }
+
+    .section-tempo-experiencia p {
+        font-size: 14px;
+    }
+
+    .texto-quem-somos {
+        font-size: 14px;
+    }
+
+    .quem-somos-div-textos h2 {
+        font-size: 22px;
+    }
+
+    .endereço-rodapé h2 {
+        font-size: 22px;
+    }
+
+    .endereço-rodapé p {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+    .footer-bottom p {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container-marcas {
+        margin-top: 50px;
+        padding: 10px;
+    }
+
+    .anos-experiencia {
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .anos-experiencia img {
+        margin: 5px;
+
+    }
+
+    .anos-experiencia p {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .anos-experiencia h3 {
+        font-size: 22px;
+        align-items: center;
+        display: flex;
+    }
+
+    .marcas {
+
+        padding: 5px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .marcas>div {
+        font-size: 12px;
+    }
+
+    .quem-somos {
+        font-size: 22px;
+    }
+
+    .quem-somos {
+        font-size: 22px;
+    }
+
+    .tempo {
+        font-size: 15px;
+    }
+
+    .menu-header ul {
+        gap: 10px;
+        padding-right: 40px;
+
+    }
+
+    .menu-header a {
+        font-size: 15px;
+
+    }
+
+    .fundo-meio {
+        min-height: 70vh;
+        padding-top: 140px;
+    }
+
+    .fundo-meio::after {
+        height: 50px;
+    }
+
+    .direitos-rodapé {
+        padding: none;
+
+    }
+
+    .direitos-rodapé p {
+        font-size: 12px;
+    }
+
+    .enredeço-rodapé p {
+        font-size: 11px;
+        padding: 10px;
+
+    }
+
+    .mapbox {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .item1 {
+        padding-right: 0;
+    }
+
+    .quem-somos-div-icons {
+        flex-direction: column;
+    }
+
+    .quem-somos2 {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .menu-qualidades {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .item1-contato-rodape {
+        align-items: center;
+        display: block;
+
+    }
+
+    .slide img {
+        height: 220px;
+    }
+
+    /* REMOVE O ERRO DO 50% */
+    .slide img {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .manual-navigation,
+    .navigation-auto {
+        display: none;
+    }
+
+    .marcas {}
+
+    /*desativar btn orçamento what*/
+    header .btn {
+        display: none;
+    }
+
+    .footer-container {
+        padding-top: 30px;
+    }
+}
