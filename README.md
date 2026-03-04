@@ -49,6 +49,7 @@ O projeto foi desenvolvido utilizando abordagem responsiva com Media Queries, ga
 
 ## 🌐 Projeto Online
 
+Acesse o projeto aqui(https://gean-cesar-da-silva-de-barros.github.io/Projeto-freelancer-de-uma-Mecanica/)
 
 
 ---
